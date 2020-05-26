@@ -1,0 +1,37 @@
+The Supplementary Information is available for download at https://www.dropbox.com/s/eb1dq3nsrcsm5ed/SUPPLEMENT.zip?dl=0
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This Supplementary Information includes the manuscript appendix, code files, helper files, and intermediate files created by our scripts to facilitate execution of the code. See the ACC form for full details and instructions.
+
+APPENDIX: Appendix.pdf
+
+- Appendix A: Derivations
+- Appendix B: Simulation B Figures
+
+
+CODE FILES:
+
+1. Templates.m - MATLAB script used to estimate templates using training dataset (computation time: 18 hours, reduced to 2 hours with parallelization)
+
+2. TemplateICA_main.m - MATLAB script used to perform template ICA and dual regression on data from 20 test subjects over 2 visits (computation time: approximately 40 minutes per subject and visit)
+
+3. visualize.R - R script used to create some of the plots for figures in the paper (computation time: negligible)
+
+
+HELPER FILES:
+
+1. melodic_IC.dscalar.nii - CIFTI file from HCP containing group ICA estimates used for template estimation and dual regression
+
+2. Q1-Q6_R440.L.inflated.32K_fs_LR.surf.gii and Q1-Q6_R440.R.inflated.32K_fs_LR.surf.gii – GIFTI surface files from HCP required for visualization of CIFTI files in Connectome Workbench
+
+
+INTERMEDIATE FILES:
+
+1. subjects.mat and subjects_samp.mat – MATLAB data files containing the list of training and test subject IDs that were used in the analysis
+
+2. maps_mean.dtseries.nii and maps_var.dtseries.nii – CIFTI files containing the estimated template maps
+
+3. S_DR_*00.mat and S_tICA_*00.mat, *=4,8,12 – MATLAB data files containing the IC estimates for all 20 test subjects using dual regression (DR) and template ICA (tICA) based on fMRI timeseries of different durations (T=400, 800 and 1200 volumes)
+
+4. ICC_DR_*00.mat, ICC_tICA_*00.mat and I2C2_*00.csv – Data files containing the reliability values (ICC and I2C2) of the IC estimates produced using DR and tICA based on fMRI timeseries of different durations (T=400, 800 and 1200)
